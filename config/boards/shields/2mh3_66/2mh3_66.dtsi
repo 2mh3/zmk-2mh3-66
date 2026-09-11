@@ -11,12 +11,12 @@
         diode-direction = "col2row";
         wakeup-source;
 
-        // 行ピン (B1, B2, B3, B4, B5 -> ProMicro互換ピン 15, 14, 16, 10, 9)
+        // 行ピン (B1, B2, B3, B4, B5 -> ProMicro互換ピン 15, 16, 14, 8, 9)
         row-gpios
             = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
