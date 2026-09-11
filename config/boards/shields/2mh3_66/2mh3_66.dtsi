@@ -6,6 +6,21 @@
         zmk,physical-layout = &physical_layout0;
     };
 
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        // 行ピン (B1, B2, B3, B4, B5 -> ProMicro互換ピン 15, 14, 16, 10, 9)
+        row-gpios
+            = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
@@ -24,19 +39,4 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
-};
-
-/* 既存ノードまたは別名としてkscanを定義 */
-&kscan0 {
-    compatible = "zmk,kscan-gpio-matrix";
-    diode-direction = "col2row";
-    wakeup-source;
-
-    row-gpios
-        = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        ;
 };
