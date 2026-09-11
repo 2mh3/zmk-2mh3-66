@@ -1,0 +1,16 @@
+if SHIELD_2MH3_66_LEFT || SHIELD_2MH3_66_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "2mh3_66"
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+if SHIELD_2MH3_66_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif

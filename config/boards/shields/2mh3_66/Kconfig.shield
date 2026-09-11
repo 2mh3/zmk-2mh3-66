@@ -1,0 +1,5 @@
+config SHIELD_2MH3_66_LEFT
+    def_bool $(shields_list_contains,2mh3_66_left)
+
+config SHIELD_2MH3_66_RIGHT
+    def_bool $(shields_list_contains,2mh3_66_right)
